@@ -1,0 +1,32 @@
+:root {
+    /* declare a variable with `--` syntax */
+    --standardBlue: #0a5fcf;
+    --darkBlue: #022e68;
+    --lightBlue: #2b85fc;
+}
+header{
+    padding:0px;
+    margin:0px;
+    color:#ffffff;
+    height: 100px;
+    text-align: center;
+    background-image: linear-gradient(to right, var(--lightBlue), var(--darkBlue));
+}
+input{
+    margin: 10px;
+    display: flex;
+}
+.submitBtn{
+    max-width: fit-content;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #0a5fcf;  
+}
+.submitBtn:active{
+    background-color: #022e68 ;
+}
