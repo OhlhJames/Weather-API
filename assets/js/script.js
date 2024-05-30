@@ -1,7 +1,7 @@
 const apiKey = 'ef8d8963d3dd913264b31cf3e23ab326'
 let sampleCities = ['Seattle', 'Austin', 'Orlando']
 
-var storedCities = JSON.parse(localStorage.getItem("storedCities"));
+let storedCities = JSON.parse(localStorage.getItem("storedCities"));
 
 function fetchForecast() {
   fetch("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey +"&units=imperial"
@@ -16,8 +16,8 @@ function fetchForecast() {
     return (
       response.json()
         .then(function (data) {
-          var simpleTemp = Math.round(data.main.temp);
-          var simpleWind = Math.round(data.wind.speed);
+          let simpleTemp = Math.round(data.main.temp);
+          let simpleWind = Math.round(data.wind.speed);
         })
     );
   });

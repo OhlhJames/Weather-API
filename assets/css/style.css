@@ -1,16 +1,37 @@
 :root {
     /* declare a variable with `--` syntax */
-    --standardBlue: #0a5fcf;
+    --standardBlue: #075ac5;
+    --asideBlue: #0655BB;
     --darkBlue: #022e68;
     --lightBlue: #2b85fc;
+    --offWhite: #faf9f6
 }
-header{
+html,body {
+    height: 100%;
+    margin: 0px;
+}
+aside {
+    min-height: 100%;
+    width: fit-content;
+    padding-right: 0.5rem;
+    margin-right: 0.5rem;
+    float: left;
+    color: var(--offWhite);
+    background-color: var(--asideBlue);
+}
+h1{
     padding:0px;
     margin:0px;
-    color:#ffffff;
+    color: var(--offWhite);
     height: 100px;
     text-align: center;
-    background-image: linear-gradient(to right, var(--lightBlue), var(--darkBlue));
+    background-image: linear-gradient(to right, var(--standardBlue), var(--darkBlue));
+}
+h2{
+    text-align: center;
+}
+h5{
+    font-size: 20px;
 }
 input{
     margin: 10px;
@@ -23,10 +44,27 @@ input{
     padding: 0 20px;
     font-size: 1rem;
     text-align: center;
-    color: #ffffff;
+    color: var(--offWhite);
     border-radius: 10px;
-    background-color: #0a5fcf;  
+    background-color: var(--lightBlue);  
 }
 .submitBtn:active{
-    background-color: #022e68 ;
+    background-color: var(--darkBlue) ;
+}
+.current-day {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;  
+}
+.forecast-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;  
+}
+.card {
+    margin: 40px;
 }
