@@ -13,9 +13,7 @@ const citySubmitHandler = function (event) {
   if (city) {
     fetchWeather(city, apiKey)
     fetchForecast(city,apiKey);
-
-    repoContainerEl.textContent = '';
-    nameInputEl.value = '';
+    cityInputEl.value = '';
   } else {
     alert('Please enter a city!');
   }
@@ -31,14 +29,12 @@ const fetchWeather = function (city,apiKey) {
       localStorage.setItem("storedCities", JSON.stringify(sampleCities));
       window.location.reload();
     }
-    return (
-      response.json()
-        .then(function (data) {
-          console.log(data)
-          let simpleTemp = Math.round(data.main.temp);
-          let simpleWind = Math.round(data.wind.speed);
-        })
-    );
+    return response.json()
+      .then(function (data) {
+        console.log(data)
+        let simpleTemp = Math.round(data.main.temp);
+        let simpleWind = Math.round(data.wind.speed);
+      })
   });
 }
 
@@ -51,6 +47,16 @@ const fetchForecast = function (city,apiKey) {
       sampleCities.shift();
       localStorage.setItem("storedCities", JSON.stringify(sampleCities));
       window.location.reload();
+    } else {
+      return response.json();
+    }
+  })
+  .then(function (data) {
+    console.log(data)
+    for (let i = 1; i < 6; i++) {
+      // Changes how the date is displayed.
+      let date = data.list[(i - 1) * 8 + 4].dt_txt;
+      console.log(date)
     }
   })
 }
