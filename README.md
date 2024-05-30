@@ -25,3 +25,5 @@ MIT
 
 # Screenshot
 
+![_C__Users_ohlhj_Bootcamp_Challenge_Weather-API_index html](https://github.com/OhlhJames/Weather-API/assets/152452334/fb4ea644-5950-412d-9b5d-d705019dfb69)
+
