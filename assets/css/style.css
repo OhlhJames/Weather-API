@@ -65,6 +65,8 @@ input{
     align-content: center;
     justify-content: center;  
 }
-.card {
-    margin: 40px;
+.card, .m-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--lightBlue);
 }

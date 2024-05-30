@@ -2,6 +2,7 @@ const apiKey = 'ef8d8963d3dd913264b31cf3e23ab326'
 const sampleCities = ['Seattle', 'Austin', 'Orlando']
 const cityInputEl = document.querySelector('.search-input')
 const submitBtn = document.querySelector('.submit-button')
+const forecastEl = document.querySelector('.forecast-cards')
 
 const storedCities = JSON.parse(localStorage.getItem("storedCities"));
 
@@ -54,9 +55,26 @@ const fetchForecast = function (city,apiKey) {
   .then(function (data) {
     console.log(data)
     for (let i = 1; i < 6; i++) {
-      // Changes how the date is displayed.
-      let date = data.list[(i - 1) * 8 + 4].dt_txt;
-      console.log(date)
+      let day = data.list[(i - 1) * 8 + 4]
+      let date = dayjs(day.dt_txt).format('MMMM D YYYY');
+      let futureTemp = Math.round(day.main.temp)
+      let futureWind = Math.round(day.wind.speed)
+      let futureHumidity = day.main.humidity
+      let dayCardEl = document.createElement('div');
+      dayCardEl.classList = 'card'
+      let titleEl = document.createElement('h5');
+      titleEl.textContent = date
+      dayCardEl.appendChild(titleEl);
+      let tempInfoEl = document.createElement('p')
+      tempInfoEl.textContent= `Temp: ${futureTemp} F`
+      dayCardEl.appendChild(tempInfoEl);
+      let windInfoEl = document.createElement('p')
+      windInfoEl.textContent=`Wind: ${futureWind} MPH`
+      dayCardEl.appendChild(windInfoEl);
+      let humidInfoEl = document.createElement('p')
+      humidInfoEl.textContent=`Humidity:${futureHumidity}%`
+      dayCardEl.appendChild(humidInfoEl);
+      forecastEl.appendChild(dayCardEl);
     }
   })
 }

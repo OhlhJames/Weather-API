@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
   </head>
   <body>
     <aside>
@@ -35,58 +36,9 @@
           </div>
         </div>
       </article>
-      <h2>5-Day Forecast </h2>
+      <h2 class = forecast-container>5-Day Forecast</h2>
       <article class = 'forecast-cards'>
-        <div class="card">
-          <div class="card-body">
-            <h5 id="day1Date" class="card-title">6/1</h5>
-            <p class="card-text">
-              Temp: <span id="day1Temp"></span><br />
-              Wind:<span id="day1Wind"></span><br />
-              Humidity:<span id="day1Humidity"></span>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 id="day2Date" class="card-title text-center"></h5>
-            <p class="card-text">
-              Temp: <span id="day2Temp"></span><br />
-              Wind:<span id="day2Wind"></span><br />
-              Humidity:<span id="day2Humidity"></span>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 id="day3Date" class="card-title text-center"></h5>
-            <p class="card-text">
-              Temp: <span id="day3Temp"></span><br />
-              Wind:<span id="day3Wind"></span><br />
-              Humidity:<span id="day3Humidity"></span>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 id="day4Date" class="card-title"></h5>
-            <p class="card-text">
-              Temp: <span id="day4Temp"></span><br />
-              Wind:<span id="day4Wind"></span><br />
-              Humidity:<span id="day4Humidity"></span>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 id="day5Date" class="card-title"></h5>
-            <p class="card-text">
-              Temp: <span id="day5Temp"></span><br />
-              Wind:<span id="day5Wind"></span><br />
-              Humidity:<span id="day5Humidity"></span>
-            </p>
-          </div>
-        </div>
+        <!-- This is where javascript will add the forecast from the API-->
       </article>
     </main>
     <script src="assets/js/script.js"></script>
