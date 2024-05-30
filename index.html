@@ -1,21 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Weather Forecast</title>
-        <link rel ="stylesheet" href="./assets/css/style.css"/>
-    </head>
-    <body>
-        <header>
-            <h1>Weather Forecast</h1>
-        </header>
-        <main>
-            <aside>
-                <label for="city">Search for a city:</label>
-                <input type="text" class="city" name="city" size="20" />
-                <button type="submit" class="submitBtn" width="20">Search</button>
-            </aside>
-        </main>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="row vw-100 g-0">
+    <aside class="col-12 col-md-3">
+      <div
+        class="col-12 text-bg-dark text-center py-1 px-5 aside-custom-height"
+      >
+        <h2 class="pt-3">Search for<br />a city:</h2>
+        <input id="searchInput" class="col-12 mt-3 rounded" placeholder=""/>
+        <button id="searchBtn" class="col-12 mt-3 text-bg-primary rounded"> Search </button>
+        <ul id="cityList" class="list-group my-5">
+          <!-- This is where javascript will add a list of cities.-->
+        </ul>
+      </div>
+    </aside>
+    <main class="col-12 col-md-9 pb-3">
+      <h1 class="col-12 text-bg-primary text-center p-2">Weather Dashboard</h1>
+      <h2 class="text-center p-2">Current Weather</h2>
+      <article class="row col-12 g-0 justify-content-center">
+        <div class="card col-9 text-bg-dark">
+          <div class="card-body">
+            <h5 class="card-title"><span id="currentCity"></span>, Today</h5>
+            <p class="card-text">
+              Temp: <span id="currentTemp"></span><br />
+              Wind:<span id="currentWind"></span><br />
+              Humidity:<span id="currentHumidity"></span>
+            </p>
+          </div>
+        </div>
+      </article>
+      <h2 class="text-center p-2 m-1">5-Day Forecast </h2>
+      <article class="row col-12 g-0 justify-content-center">
+        <div class="card col-10 col-md-2 text-bg-dark m-1">
+          <div class="card-body">
+            <h5 id="day1Date" class="card-title text-center"></h5>
+            <p class="card-text">
+              Temp: <span id="day1Temp"></span><br />
+              Wind:<span id="day1Wind"></span><br />
+              Humidity:<span id="day1Humidity"></span>
+            </p>
+          </div>
+        </div>
+        <div class="card col-10 col-md-2 text-bg-dark m-1">
+          <div class="card-body">
+            <h5 id="day2Date" class="card-title text-center"></h5>
+            <p class="card-text">
+              Temp: <span id="day2Temp"></span><br />
+              Wind:<span id="day2Wind"></span><br />
+              Humidity:<span id="day2Humidity"></span>
+            </p>
+          </div>
+        </div>
+        <div class="card col-10 col-md-2 text-bg-dark m-1">
+          <div class="card-body">
+            <h5 id="day3Date" class="card-title text-center"></h5>
+            <p class="card-text">
+              Temp: <span id="day3Temp"></span><br />
+              Wind:<span id="day3Wind"></span><br />
+              Humidity:<span id="day3Humidity"></span>
+            </p>
+          </div>
+        </div>
+        <div class="card col-10 col-md-2 text-bg-dark m-1">
+          <div class="card-body">
+            <h5 id="day4Date" class="card-title text-center"></h5>
+            <p class="card-text">
+              Temp: <span id="day4Temp"></span><br />
+              Wind:<span id="day4Wind"></span><br />
+              Humidity:<span id="day4Humidity"></span>
+            </p>
+          </div>
+        </div>
+        <div class="card col-10 col-md-2 text-bg-dark m-1">
+          <div class="card-body">
+            <h5 id="day5Date" class="card-title text-center"></h5>
+            <p class="card-text">
+              Temp: <span id="day5Temp"></span><br />
+              Wind:<span id="day5Wind"></span><br />
+              Humidity:<span id="day5Humidity"></span>
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
