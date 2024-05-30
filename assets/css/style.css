@@ -37,7 +37,7 @@ input{
     margin: 10px;
     display: flex;
 }
-.submitBtn{
+.submit-button{
     max-width: fit-content;
     border: 0;
     line-height: 2.5;
@@ -48,7 +48,7 @@ input{
     border-radius: 10px;
     background-color: var(--lightBlue);  
 }
-.submitBtn:active{
+.submit-button:active{
     background-color: var(--darkBlue) ;
 }
 .current-day {
