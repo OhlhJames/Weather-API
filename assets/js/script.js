@@ -1,8 +1,12 @@
-const apiKey = 'ef8d8963d3dd913264b31cf3e23ab326'
-const sampleCities = ['Seattle', 'Austin', 'Orlando']
-const cityInputEl = document.querySelector('.search-input')
-const submitBtn = document.querySelector('.submit-button')
-const forecastEl = document.querySelector('.forecast-cards')
+const apiKey = 'ef8d8963d3dd913264b31cf3e23ab326';
+const sampleCities = ['Seattle', 'Austin', 'Orlando'];
+const cityInputEl = document.querySelector('.search-input');
+const submitBtn = document.querySelector('.submit-button');
+const forecastEl = document.querySelector('.forecast-cards');
+const currentWeatherTitle = document.querySelector('.m-card-title');
+const currentWeatherTemp = document.querySelector('.current-temp')
+const currentWeatherWind = document.querySelector('.current-wind')
+const currentWeatherHumid = document.querySelector('.current-humid')
 
 const storedCities = JSON.parse(localStorage.getItem("storedCities"));
 
@@ -35,6 +39,12 @@ const fetchWeather = function (city,apiKey) {
         console.log(data)
         let simpleTemp = Math.round(data.main.temp);
         let simpleWind = Math.round(data.wind.speed);
+        let humidity = data.main.humidity
+        currentWeatherTitle.textContent = `${data.name} Today`
+        currentWeatherTemp.textContent = simpleTemp
+        currentWeatherWind.textContent = simpleWind
+        currentWeatherHumid.textContent = humidity
+
       })
   });
 }
@@ -74,6 +84,18 @@ const fetchForecast = function (city,apiKey) {
       let humidInfoEl = document.createElement('p')
       humidInfoEl.textContent=`Humidity:${futureHumidity}%`
       dayCardEl.appendChild(humidInfoEl);
+      if (day.weather[0].main === "Clouds") {
+        dayCardEl.append(" ☁️");
+      }
+      if (day.weather[0].main === "Clear") {
+        dayCardEl.append(" ☀️");
+      }
+      if (day.weather[0].main === "Rain") {
+        dayCardEl.append(" 🌧️");
+      }
+      if (day.weather[0].main === "Snow") {
+        dayCardEl.append(" ❄️");
+      }
       forecastEl.appendChild(dayCardEl);
     }
   })
