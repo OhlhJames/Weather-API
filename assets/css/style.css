@@ -61,12 +61,14 @@ input{
 .forecast-cards {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;  
 }
 .card, .m-card {
     margin: 20px;
-    padding: 20px;
-    background-color: var(--lightBlue);
+    padding: 30px;
+    border-style: solid;
+    border-color: var(--asideBlue);
+    border-radius: 5px;
 }

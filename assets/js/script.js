@@ -41,9 +41,9 @@ const fetchWeather = function (city,apiKey) {
         let simpleWind = Math.round(data.wind.speed);
         let humidity = data.main.humidity
         currentWeatherTitle.textContent = `${data.name} Today`
-        currentWeatherTemp.textContent = simpleTemp
-        currentWeatherWind.textContent = simpleWind
-        currentWeatherHumid.textContent = humidity
+        currentWeatherTemp.textContent = `Temp: ${simpleTemp}F`
+        currentWeatherWind.textContent = `Wind: ${simpleWind}MPH`
+        currentWeatherHumid.textContent = `Humidity: ${humidity}%`
 
       })
   });
@@ -65,7 +65,7 @@ const fetchForecast = function (city,apiKey) {
   .then(function (data) {
     console.log(data)
     for (let i = 1; i < 6; i++) {
-      let day = data.list[(i - 1) * 8 + 4]
+      let day = data.list[(i - 1) * 8]
       let date = dayjs(day.dt_txt).format('MMMM D YYYY');
       let futureTemp = Math.round(day.main.temp)
       let futureWind = Math.round(day.wind.speed)
