@@ -16,12 +16,8 @@ function fetchForecast() {
     return (
       response.json()
         .then(function (data) {
-          $("#currentCity").text(data.name);
           var simpleTemp = Math.round(data.main.temp);
-          $("#currentTemp").text(simpleTemp + "°F");
           var simpleWind = Math.round(data.wind.speed);
-          $("#currentWind").text(simpleWind + " MPH");
-          $("#currentHumidity").text(data.main.humidity + "%");
         })
     );
   });
